@@ -1,0 +1,12 @@
+{
+    "title": "mipaquete",
+    "version": "1.0.0",
+    "description": "Mi primer paquete de Node.js",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "topics": [ "JavaScript", "Node.js" ],  
+    "author": "Pily Bernal",
+    "license": "ISC"
+  }

@@ -53,9 +53,66 @@ console.log('Después de setImmediate()'); */
 setInterval(mostrarTema, 1500, 'Node.js'); */
 // Detener con CTRL + C 
 
-function sumar(a, b){
+/*function sumar(a, b){
   console.log(a + b)
 }
-
 setInterval(sumar, 1500, 3, 4);
-// Detener
+// Detener*/
+
+const fs = require('fs');
+
+//Leer un archivo
+
+console.log('Antes de leer el archivo...')
+
+const archivo = fs.readFileSync('index.html', 'utf-8'//, (err, contenido) => {
+  /*if (err) {
+    //console.log(err);
+    throw err; //se puede quitar else porque se detine la ejecución con throw
+  } 
+  console.log(contenido);
+}*/)
+
+console.log(archivo);
+
+console.log('Después de leer el archivo...');
+
+//Cambiar el nombre de un archivo
+fs.renameSync('main.html', 'index.html'//, (err) => {
+  /*if (err) {
+    throw err;
+  }
+  console.log('Nombre cambiado exitosamente');
+}*/);
+
+console.log('Después de cambiar el nombre al archivo...')
+
+//Agregar contenido al final de un archivo
+fs.appendFileSync('main.html', '<p>Hola</p>', (err) => {
+  if (err) {
+    throw err;
+  }
+  console.log('Archivo actualizado');
+}); 
+
+console.log('Después de agregar contenido al archivo...')
+
+//Reemplazar todo el contenido del archivo
+fs.writeFileSync('main.html', 'Contenido nuevo', (err) => {
+  if (err) {
+    throw err;
+  }
+  console.log('Contenido reemplazado exitosamente');
+});
+
+console.log('Después de reemplazar el contenido del archivo...');
+
+//Eliminar archivos
+fs.unlink('main.html', (err) => {
+  if (err) {
+    throw err;
+  }
+  console.log('Archivo eliminado');
+});
+
+console.log('Después de eliminar el archivo...');
