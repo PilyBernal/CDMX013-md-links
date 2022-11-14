@@ -68,12 +68,12 @@ return (filesMd);
 }
 
 //Obtener el contenido de un archivo .md  
-function readContentFile(getAbsolutePath) {
+function readContentFile(absolutePath) {
 
-  fs.promises.readFile (readContentDir, 'utf-8')
+  fs.promises.readFile (absolutePath, 'utf-8')
   
   .then(function(result) {
-    console.log(""+result);
+    console.log("" + result);
   })
   .catch(function(error) {
      console.log(error);
